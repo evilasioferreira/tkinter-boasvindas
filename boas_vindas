@@ -1,0 +1,28 @@
+#DIGITAR NOME E RETORNAR >> NOME + SEJA BEM VINDO
+from tkinter import *
+
+def cadastrar():    
+        nome = entradaNome.get() 
+        print(f"Olá {nome} - Seja Bem Vindo!")
+
+janela = Tk()
+janela.title("Boas Vindas")
+janela.geometry("300x100+550+250")
+janela.resizable(False,False)
+
+labelNome = Label(janela,
+                  text="Nome:",
+                  fg="blue")
+entradaNome = Entry(janela, width=35)
+
+cadastrarBtn = Button(janela,
+                      text="CADASTRAR",
+                      font=("Arial",10,"bold"),
+                      bg="red",
+                      fg="white",
+                      command=cadastrar)
+
+labelNome.grid(column=1,row=1,padx=5,pady=15)
+entradaNome.grid(column=2,row=1,padx=5,pady=15)
+cadastrarBtn.grid(column=2,row=3,columnspan=3,padx=10,pady=0)
+mainloop()
